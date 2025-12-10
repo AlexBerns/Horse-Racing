@@ -37,9 +37,7 @@ A data entry consists of 224 features:
 28: **cls**: Class  
 29: **grade**: Grade (G1/G2/G3/etc.)  
 30: **BreederCode**: Breeder identifier  
-
 31-220: same columns but from past races. _i means the value for the i-th race before this one.
-
 221: **f**: Father's code  
 222: **ff**: Father’s father's code  
 223: **m**: Mother's code
