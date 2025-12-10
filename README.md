@@ -6,8 +6,9 @@ This project aims to build and compare machine learning models capable of predic
 
 We use the dataset `data.pkl` which contains 3 years worth of historical race data ranging from 2020/01/05 to 2022/12/28. We use the last 3 months for evaluation and the rest for training. Data format specifications and Code tables can be found in the `JV-Data490.xlsx` file.
 
-A data entry consists of 224 features:
+A data entry consists of:
 
+- Input with 224 features:
 1: **raceid**: Race identifier  
 2: **horseid**: Horse identifier  
 3: **racedate**: Date of the race  
@@ -43,6 +44,35 @@ A data entry consists of 224 features:
 222: **ff**: Father’s father's code  
 223: **m**: Mother's code
 224: **mf**: Mother’s father's code  
+
+- Label:
+The finishing position
+
+- Harai / Payout: 
+1. **RaceID**: Race identifier
+2. **TorokuTosu**: Number of horses registered for the race.
+3. **SyussoTosu**: Number of horses that actually started.
+4. **FuseirituFlag**: Flags indicating invalid entries or non-starters (list of 9 flags).
+5. **TokubaraiFlag**: Flags indicating special payout conditions.
+6. **HenkanFlag**: Flags indicating refunded or void bets.
+7. **HenkanUma**: List of horse numbers involved in refunds.
+8. **HenkanWaku**: List of refunded bracket (waku) numbers.
+9. **HenkanDoWaku**: List of refunded double-bracket combinations.
+10. **PayTansyo**: Payouts for Win bets (単勝) — list of `{Umaban, Pay, Ninki}`.
+11. **PayFukusyo**: Payouts for Place bets (複勝).
+12. **PayWakuren**: Payouts for Bracket Quinella bets (枠連).
+13. **PayUmaren**: Payouts for Quinella bets (馬連).
+14. **PayWide**: Payouts for Wide / Place-Quinella bets (ワイド).
+15. **PayReserved1**: Reserved field (unused but part of official JRA format).
+16. **PayUmatan**: Payouts for Exacta bets (馬単, order matters).
+17. **PaySanrenpuku**: Payouts for Trio bets (三連複).
+18. **PaySanrentan**: Payouts for Trifecta bets (三連単).
+19. **Year**: Year of the race.
+20. **MonthDay**: Month and day of the race (MMDD).
+21. **JyoCD**: Racecourse code.
+22. **Kaiji**: Meeting number (開催).
+23. **Nichiji**: Day number within the meeting.
+24. **RaceNum**: Race number of the day (1–12).
 
 ## Metric
 
