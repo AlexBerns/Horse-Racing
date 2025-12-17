@@ -58,11 +58,11 @@ The finishing position
 7. **HenkanUma**: List of horse numbers involved in refunds.
 8. **HenkanWaku**: List of refunded bracket (waku) numbers.
 9. **HenkanDoWaku**: List of refunded double-bracket combinations.
-10. **PayTansyo**: Payouts for Win bets (単勝) — list of `{Umaban, Pay, Ninki}`.
-11. **PayFukusyo**: Payouts for Place bets (複勝).
-12. **PayWakuren**: Payouts for Bracket Quinella bets (枠連).
-13. **PayUmaren**: Payouts for Quinella bets (馬連).
-14. **PayWide**: Payouts for Wide / Place-Quinella bets (ワイド).
+10. **PayTansyo**: Payouts for Win bets (単勝) - bet on 'top 1'.
+11. **PayFukusyo**: Payouts for Place bets (複勝) - bet on 'in top 3'..
+12. **PayWakuren**: Payouts for Bracket Quinella bets (枠連) - bet on 'top 1 and top 2' brackets, order does not matter.
+13. **PayUmaren**: Payouts for Quinella bets (馬連) - bet on 'top 1 and top 2' horses, order does not matter.
+14. **PayWide**: Payouts for Wide / Place-Quinella bets (ワイド) - bet on two specific horses 'in top 3', order does not matter.
 15. **PayReserved1**: Reserved field (unused but part of official JRA format).
 16. **PayUmatan**: Payouts for Exacta bets (馬単, order matters).
 17. **PaySanrenpuku**: Payouts for Trio bets (三連複).
@@ -76,12 +76,29 @@ The finishing position
 
 ## Metric
 
-We want to predict the finishing positions of each horse, and maximise the payout.
+The goal is to maximise the payout.
+
+We can use models to predict:
+- Winner only
+- Ranking
+- Time to finish the race
+
+And use these predictions to estimate payout for different bet strategies:
+- Tansyo (単勝)
+- Fukusyo (複勝)
+- Wakuren (枠連)
+- Umaren (馬連)
+- Wide (ワイド)
 
 ## Models
 
-We implemented diffrent machine learning models:
+We used diffrent machine learning models:
 - LightGBM
+- XGBoost
+- Catboost
+- Random Tree Classifier
+- Neural Network
+- Logistic Regression
 
 ## Results
 
